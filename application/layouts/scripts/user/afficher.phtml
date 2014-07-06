@@ -1,0 +1,106 @@
+
+
+
+
+     <section class="content-block" role="main">
+    <article class="data-block nested">
+    <header>
+                                <h2>Form Client</h2>
+                                <ul class="data-header-actions tabs">
+                                    <li class="demoTabs active"><a href="#horizontal">Gestion client</a></li>
+                                    <li class="demoTabs"><a href="#vertical">Gestion projet</a></li>
+                                    <li class="demoTabs"><a href="#advanced">Payement De projet</a></li>
+                                </ul>
+                            </header>
+                            <section class="tab-content">
+                            
+                                <!-- Example horizontal forms -->
+                                <!-- Tab #horizontal -->
+                                <div class="tab-pane active" id="horizontal">
+                                
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <legend>Form Client</legend>
+                                        
+                                        <h3>Liste Des Clients</h3>
+                                        <table class="table">
+                                         <thead>
+      
+                                             <tr>
+                                                  
+                                                     <th>Nom</th>
+                                                     <th>Prenom</th>
+                                                     <th>Adresse</th>
+                                                     <th>Action</th>
+                                             </tr>
+                                              </thead>
+                                              <tbody>
+                                                    <?php 
+                            $i=0;
+                            foreach($this->paginator as $pag) : ?> 
+                                <tr >
+                                
+                                    <td><?php echo $this->escape($pag->nom);?></td>
+                                    <td><?php echo $this->escape($pag->prenom);?></td>
+                                    <td><?php echo $this->escape($pag->adresse);?></td>
+                                    <td>
+                                        <!--aller dant le conntroller client et aporter le code de client -->
+                                      <a style="text-decoration:none; color:black;"
+                                       href="<?php echo $this->url(array(
+                                               'controller'=>'client',
+                                                'action'=>'modifier',
+                                                'code'=>$pag->code_client));?>">
+
+                                      <img src="<?php echo $this->baseUrl()?>/images/mise/edit.png"> &nbsp &nbsp <a/>
+
+
+                                        <a style="text-decoration:none; color:black;"
+                                       href="<?php echo $this->url(array(
+                                               'controller'=>'client',
+                                                'action'=>'supprimer',
+                                                'code'=>$pag->code_client));?>">
+                                      
+                                      <img src="<?php echo $this->baseUrl()?>/images/mise/supp.png"> &nbsp &nbsp <a/>
+                                    </td>
+
+                                 </tr >
+                                                    
+    
+                                             </tbody>
+                    
+<?php 
+  $i++;
+endforeach;?>
+
+</table>
+
+<?php echo $this->paginationControl($this->paginator, 'sliding', 'pagination.phtml'); ?>
+
+
+
+
+                    
+                    
+                           
+                    <div class="nav" >
+                                            <ul>
+                                           
+                                                  <li>
+                                            <div class="form-actions">
+                        <button class="btn btn-alt btn-large btn-primary" type="submit">Modifier</button>
+                        </div>
+                                            </li>
+                                                    <li>
+                                            <div class="form-actions">
+                        <button class="btn btn-alt btn-large btn-primary" type="submit">Supprimer</button>
+                        </div>
+                                            </li>
+                                         
+                                            </ul>
+                                        </div>                  
+                                          </fieldset>
+                                       </form>
+                                   </div>
+                                </section>
+    </article>
+    </section>

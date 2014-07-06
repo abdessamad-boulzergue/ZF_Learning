@@ -1,0 +1,96 @@
+  <!DOCTYPE html>
+  <script type="text/javascript">
+ 
+  </script>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/css/chromatron-dark.css" />
+    </head>
+    <body>
+    <section class="navigation-block">
+			
+				<!-- Main page header -->
+				<header>
+					<!-- Main page logo -->
+					<h1><a class="brand" href="login" title="Back to Homepage">Chromatron Responsive Admin Backend built with Twitter Bootstrap</a></h1>
+					
+					<!-- Main page headline -->
+					<p>A cathode ray tube awesomeness</p>
+					
+				</header>
+				<!-- /Main page header -->
+				<!-- User profile -->
+				<section class="user-profile">
+					<figure>
+						<img alt="myAvatar" src="http://placekitten.com/50/50">
+						<figcaption>
+							<strong><a href="#" class="">abdessamad boulzergue</a></strong>
+							<em>Administrator</em>
+							<ul>
+								<li><a class="btn btn-primary btn-flat" href="#" title="View www.example.com">view website</a></li>
+								<li><a class="btn btn-primary btn-flat" href="<?php echo $this->url(array('controller'=>'user','action'=>'logout'));?>" title="Securely logout from application">logout</a></li>
+							</ul>
+						</figcaption>
+					</figure>
+				</section>
+				<!-- /User profile -->
+				
+				<!-- Responsive navigation -->
+				<a href="#" class="btn btn-navbar btn-large" data-toggle="collapse" data-target=".nav-collapse"><span class="fam-briefcase"></span> File explorer</a>
+				
+				<!-- Main navigation -->
+				<nav class="main-navigation nav-collapse" role="navigation">
+					<ul>
+						<li>
+						<a href="index-2.html" class="no-submenu"><span class="fam-heart"></span>User</a>
+						</li>
+						<ul>
+						<li><a class="no-submenu" href="<?php echo $this->url(array('controller'=>'user','action'=>'ajouter'));?>">Nouveau User</a></li>
+						<li><a  class="no-submenu" href="<?php echo $this->BaseUrl() ?>/user/afficher">Consultation</a></li>
+						<li><a href="#" class="no-submenu">Recherche</a></li>
+						</ul>
+						<li>
+						<a href="forms.html" class="no-submenu"><span class="fam-application-form"></span>Projet</a>
+						</li>
+						<ul>
+						<li><a  class="no-submenu" href="<?php echo $this->url(array('controller'=>'Projet','action'=>'ajouter'));?>">Nouveau Projet</a></li>
+						<li><a class="no-submenu" href="<?php echo $this->url(array('controller'=>'Projet','action'=>'afficher'));?>">Consultation</a></li>
+						<li><a href="#" class="no-submenu">Recherche</a></li>
+						</ul>
+						<li><a href="charts.html" class="no-submenu"><span class="fam-chart-line"></span>Books</a></li>
+						<ul>
+						<li><a  class="no-submenu" href="<?php echo $this->url(array('controller'=>'Book','action'=>'ajouter'));?>">New Book</a></li>
+						<li><a class="no-submenu" href="<?php echo $this->url(array('controller'=>'Book','action'=>'afficher'));?>">Show</a></li>
+						<li><a href="#" class="no-submenu">Find</a></li>
+						</ul>
+						<li><a href="tables.html" class="no-submenu"><span class="fam-application-view-columns"></span>Tables</a></li>
+						<li>
+							<a href="#"><span class="fam-picture"></span>Gallery<span class="badge" title="5 new image uploaded">5</span></a>
+							<ul>
+								<li><a href="gallery.html">Car Gallery</a></li>
+								<li><a href="gallery.html">Food Gallery</a></li>
+								<li><a href="gallery.html">Art Gallery</a></li>
+								<li><a href="gallery.html">Animal Gallery</a></li>
+								<li><a href="gallery.html">Super long name to see how it collapse</a></li>
+							</ul>
+						</li>
+						<li class="current"><a href="file-explorer.html" class="no-submenu"><span class="fam-briefcase"></span>File explorer</a></li>
+						<li><a href="calendar.html" class="no-submenu"><span class="fam-calendar-view-day"></span>Calendar<span class="badge" title="27 tasks this week">27</span></a></li>
+						<li><a href="ui-buttons.html" class="no-submenu"><span class="fam-rosette"></span>UI & Buttons</a></li>
+						<li><a href="typo.html" class="no-submenu"><span class="fam-text-padding-left"></span>Typography</a></li>
+						<li><a href="grid.html" class="no-submenu"><span class="fam-cog"></span>Grid</a></li>
+						<li>
+							<a href="#"><span class="fam-heart"></span>Goodies</a>
+							<ul>
+								<li><a href="goodies.html">Goodies</a></li>
+								
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<!-- /Main navigation -->
+				
+			</section>
+			<?php  echo $this->layout()->content  ?>
+	</body>
+</html>

@@ -1,0 +1,116 @@
+  <!DOCTYPE html>
+  <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/jquery-ui.css" />
+
+    <script src="<?php echo $this->baseUrl(); ?>/js/jquery-1.9.1.js"></script>
+    <script src="<?php echo $this->baseUrl(); ?>/js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="<?php echo $this->baseUrl(); ?>/js/jquery.ui.datepicker.js"></script>
+    <script>
+
+     $(function() {
+    $( "#datepicker" ).datepicker();
+    });
+     $(function() {
+    $( "#datepicker1" ).datepicker();
+    });
+	</script>
+  <section class="content-block" role="main">
+    <article class="data-block nested">
+    <header>
+                                <h2>Form Projet</h2>
+                                <ul class="data-header-actions tabs">
+                                    <li class="demoTabs active"><a href="#horizontal">Gestion client</a></li>
+                                    <li class="demoTabs"><a href="#vertical">Gestion projet</a></li>
+                                    <li class="demoTabs"><a href="#advanced">Payement De projet</a></li>
+                                </ul>
+                            </header>
+                            <section class="tab-content">
+                            
+                                <!-- Example horizontal forms -->
+                                <!-- Tab #horizontal -->
+                                <div class="tab-pane active" id="horizontal">
+                                
+                                    <form class="form-horizontal" method="post">
+                                        <fieldset>
+                                            <legend>Form projet</legend>
+                                            
+                                            <div class="control-group">
+                                                <label class="control-label" for="input" >Type projet</label>
+                                                <div class="controls">
+                                                   <!-- <label class="checkbox inline">
+							<input type="checkbox" id="inlineCheckbox1" value="option1"> Facturé
+						    </label>
+						    <label class="checkbox inline">
+							<input type="checkbox" id="inlineCheckbox2" value="option2"> Non Facturé
+						    </label>-->
+						    <select id="select" name="type">
+						    	 <option value="<?php echo $this->type; ?>"><?php echo $this->type; ?></option>
+							    <option value="Site/Hébergement">Site/Hébergement</option>
+							    <option value="Site/Hébergement/Referencement">Site/Hébergement/Referencement</option>
+							    <option value="Referencement">Referencement</option>
+							    <option></option>
+						    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input"  >Date debut projet</label>
+                                                <div class="controls">
+                                                <input id="datepicker" class="input-xlarge" type="text" placeholder="choisire le date de debut" name="date1" readonly value="<?php echo date('Y-m-d',strtotime($this->date1)); ?>" requred>
+                                                </div>
+                                            </div>
+					                        <div class="control-group">
+                                                <label class="control-label" for="input" >Date fin projet</label>
+                                                <div class="controls">
+                                                 <input id="datepicker1" class="input-xlarge" type="text"  placeholder="choisire le date de fin" name="date2" readonly value="<?php echo date('Y-m-d',strtotime($this->date2)) ?> " requred>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input" >Nom client</label>
+                                                <div class="controls">
+                                                   <!-- <label class="checkbox inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Facturé
+                            </label>
+                            <label class="checkbox inline">
+                            <input type="checkbox" id="inlineCheckbox2" value="option2"> Non Facturé
+                            </label>-->
+                            <select id="select" name="client" >
+                                <!--remlir le combo avec les nom de client-->
+                                <?php
+                                 foreach( $this->allclient as $sel) : ?>
+                                <option value="<?php echo $this->escape($sel->code_client); ?>"><?php echo $this->escape($sel->nom); ?></option>
+                                <?php 
+
+                                endforeach;?>
+                                 
+                                
+                            </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input" >Equipe projet</label>
+                                                <div class="controls">
+						    <textarea id="textarea" class="input-xlarge" rows="5" name="equipe" ><?php echo $this->equipe; ?></textarea>
+						</div>
+                                            </div>
+
+                                        <div class="nav" >
+                                            <ul>
+                                                <li>
+                                            <div class="form-actions">
+					    <button class="btn btn-alt btn-large btn-primary" type="submit">Modifier</button>
+					    </div>
+                                            </li>
+                                            <li>
+                                            <div class="form-actions">
+					    <button class="btn btn-alt btn-large btn-primary" type="reset">Vider</button>
+					    </div>
+                                            </li> 
+                                            </ul>
+                                        </div>
+                                       
+                                                      
+                                          </fieldset>
+                                       </form>
+                                   </div>
+                                </section>
+    </article>
+    </section>

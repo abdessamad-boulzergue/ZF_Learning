@@ -1,0 +1,76 @@
+  <!DOCTYPE html>
+  <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/jquery-ui.css" />
+
+    <script src="<?php echo $this->baseUrl(); ?>/js/jquery-1.9.1.js"></script>
+    <script src="<?php echo $this->baseUrl(); ?>/js/jquery-ui-1.10.3.custom.js"></script>
+    <script>
+     $(function() {
+    $( "#datepicker" ).datepicker();
+    });
+	</script>
+  <section class="content-block" role="main">
+    <article class="data-block nested">
+   
+                            <section class="tab-content">
+                            
+                                <!-- Example horizontal forms -->
+                                <!-- Tab #horizontal -->
+                                <div class="tab-pane active" id="horizontal">
+                                
+                                    <form class="form-horizontal" method="post">
+                                        <fieldset>
+                                            <legend>Form Book</legend>
+                                            
+                                            <div class="control-group">
+                                                <label class="control-label" for="input" >Book's Matiere</label>
+                                                <div class="controls">
+                            
+						    <select id="select" name="type">
+							    <option value="anlyse">Analyse</option>
+							    <option value="c+">C++</option>
+							    <option value="java">Java</option>
+							    <option value="telcom">Telcom</option>
+							    <option value="eng">Anglais</option>
+							    <option value="tec">Tec</option>
+						    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input"  >Date</label>
+                                                <div class="controls">
+                                                <input id="datepicker" class="input-xlarge" type="text" placeholder="choisire le date de debut" readonly name="date1" requred>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input" >Book Location</label>
+                                                <div class="controls">
+                                                    <input  name="file1" class="input-xlarge" type="file" value="parcourir" required>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input" >About this Book</label>
+                                                <div class="controls">
+						    <textarea id="textarea" class="input-xlarge" rows="5" name="equipe"></textarea>
+						</div>
+                                            </div>
+
+                                        <div class="nav" >
+                                            <ul>
+                                                <li>
+                                            <div class="form-actions">
+					    <button class="btn btn-alt btn-large btn-primary" type="submit">Ajouter</button>
+					    </div>
+                                            </li>
+                                            <li>
+                                            <div class="form-actions">
+					    <button class="btn btn-alt btn-large btn-primary" type="reset">Vider</button>
+					    </div>
+                                            </li> 
+                                            </ul>
+                                        </div>
+                                          </fieldset>
+                                       </form>
+                                   </div>
+                                </section>
+    </article>
+    </section>

@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ 
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/css/chromatron-dark.css" />
+       
+    </head>
+    <body>
+    <section class="content-block" role="main">
+
+        <form  action="<?php echo $this->url(array('controller'=>'index','action'=>'login'));?>" method="POST">
+        	<div class="control-group">
+            
+	  	
+				<fieldset  id="fild" >
+                	<legend>Login</legend>
+				<!--<label class="control-label" for="prependedInput"><h2 id="border">Login</h2></label>-->
+                                
+						<div class="form-controls">
+    						<div class="input-prepend">
+    							
+								     <span class="add-on">Utilisateur</span>
+    							     <input name="username" id="login" id="prependedInput" type="text" placeholder="Votre Nom" required autofocus >
+
+								</div> 
+						</div>
+                          	<div class="input-prepend">
+    						 	
+								     <span class="add-on">Mot de passe</span>
+    						 	     <input name="password" id="login" id="prependedInput" type="password" placeholder="Votre Mot de Passe" required>
+						  
+						  </div>
+                          <div id="list">
+                                <ul>
+                                    <li>
+                                         <div class="form-actions button">
+					    					<button class="btn btn-alt btn-large btn-primary" type="submit" name="valider" >Valider</button>
+					                     </div>
+                                    
+									</li>
+                                     <li>
+                                        
+										<div class="form-actions button">
+					    					<button class="btn btn-alt btn-large btn-primary" type="reset" >Vider</button>
+					    				 </div>
+                                    
+									</li>
+                                </ul>
+                         </div>
+            	</fieldset>
+			</div>
+        </form>		
+    </section>
+    </body>
+    
